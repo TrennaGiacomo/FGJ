@@ -7,7 +7,7 @@ public class DraggableDetector : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (!col.gameObject.TryGetComponent<DragSprite>(out var draggable))
+        if (!col.gameObject.TryGetComponent<DraggableBubble>(out var draggable))
             return;
         
         OnDraggableTriggered.Invoke(draggable.gameObject);
