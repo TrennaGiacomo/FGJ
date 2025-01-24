@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4c7d44a92e2ae9843917724344ba52f8
+guid: 6e84ae01278a87b45ab15d73215f6628
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3691463601059337291
-    second: DOTweenMiniIcon_0
+      213: 4955049995946873500
+    second: bro_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DOTweenMiniIcon_0
+      name: bro_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 28
         y: 0
-        width: 9
-        height: 9
+        width: 78
+        height: 117
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b441d624696ba3330800000000000000
-      internalID: 3691463601059337291
+      spriteID: c92d6b4e7bfd3c440800000000000000
+      internalID: 4955049995946873500
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      DOTweenMiniIcon_0: 3691463601059337291
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

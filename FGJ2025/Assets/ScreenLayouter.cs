@@ -5,6 +5,8 @@ using System;
 public class ScreenLayouter : MonoBehaviour
 {
     public float ScreenWidth { get; set; }
+    public Transform Root => ScreenRoot;
+    
     [SerializeField] protected Transform ScreenRoot;
     [SerializeField] protected float ScrollDuration = 1f;
 
