@@ -11,6 +11,7 @@ public class Game : MonoBehaviour
         debugCanvas.DebugScreen(screen);
 
         // Solving logic
+        _bro.StartThinking();
         
         // If correct solution
         screen.problem.SolveProblem();
