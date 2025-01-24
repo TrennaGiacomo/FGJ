@@ -6,6 +6,8 @@ using UnityEngine.Events;
 public class ScreenManager : MonoBehaviour
 {
     public UnityEvent<ScreenRoot> OnScreenAppeared = new();
+    public UnityEvent OnBeginScroll;
+    public UnityEvent OnEndScroll;
 
     [SerializeField] private ScreenLayouter _layouter;
 
@@ -49,7 +51,9 @@ public class ScreenManager : MonoBehaviour
         }
 
         _moving = true;
-        
+
+        OnBeginScroll.Invoke();
+
         var nextScreen = _screens[_screenIndex + 1];
 
         var scrollAmount = -_screenWidth;
@@ -58,6 +62,7 @@ public class ScreenManager : MonoBehaviour
             _moving = false;
             _screenIndex++;
 
+            OnEndScroll.Invoke();
             OnScreenAppeared.Invoke(nextScreen);
         });
 
