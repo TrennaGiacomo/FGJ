@@ -247,6 +247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   problemType: 0
+  solution: {fileID: 0}
 --- !u!1 &542044689
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,6 +295,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _thoughtBubble: {fileID: 1902773701}
+  OnChoiceMade:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 985944960}
+        m_TargetAssemblyTypeName: Game, Assembly-CSharp
+        m_MethodName: HandleChoice
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &700277953
 GameObject:
   m_ObjectHideFlags: 0
@@ -510,6 +526,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &965883061 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8775137663443550218, guid: 03ba85c5ca426e849bb06958bfa48591, type: 3}
+  m_PrefabInstance: {fileID: 3896722583514789195}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 719fbed074eb43c43a507ffa4e534e4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &985944958
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,6 +584,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fb3ebeb223f550439277018f0fe0415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnFinishCurrentScreen:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 965883061}
+        m_TargetAssemblyTypeName: ScreenManager, Assembly-CSharp
+        m_MethodName: MoveToNextScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _bro: {fileID: 542044691}
   _choiceCreator: {fileID: 1088775862}
   debugCanvas: {fileID: 1819080119}
@@ -697,6 +739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   problemType: 0
+  solution: {fileID: 0}
 --- !u!1001 &1555190416
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -784,6 +827,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   problemType: 0
+  solution: {fileID: 0}
 --- !u!1 &1642337770
 GameObject:
   m_ObjectHideFlags: 0
@@ -1272,7 +1316,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnDraggableTriggered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 542044691}
+        m_TargetAssemblyTypeName: Character, Assembly-CSharp
+        m_MethodName: GetChoiceFromDraggable
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &3896722583514789195
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1451,6 +1507,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   problemType: 0
+  solution: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -10,10 +10,14 @@ public class ChoiceCreator : MonoBehaviour
     private List<GameObject> _choices = new();
 
     public void CreateChoices()
-    {
+    {   
+        const float randOffset = 1.5f;
         foreach (GameObject choicePrefab in choicePrefabs)
         {
-            Vector3 randomPosition = creationCenter.position + new Vector3(Random.Range(-5f, 5f), Random.Range(-5f, 5f));
+            Vector3 randomPosition = creationCenter.position 
+                + new Vector3(Random.Range(-randOffset, randOffset), 
+                    Random.Range(-randOffset, randOffset));
+
             _choices.Add(Instantiate(choicePrefab, randomPosition, creationCenter.rotation));
         }
     }

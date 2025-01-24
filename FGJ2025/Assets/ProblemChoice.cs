@@ -2,7 +2,7 @@ using UnityEngine;
 
 public enum SolutionType
 {
-
+    DontStepInHole
 }
 
 /// <summary>
@@ -11,6 +11,4 @@ public enum SolutionType
 public class ProblemChoice : MonoBehaviour
 {
     public SolutionType solutionType;
-
-    
 }
