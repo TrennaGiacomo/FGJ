@@ -347,6 +347,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 8114992dd1c4d7143bb11281963f48b8, type: 2}
+    - target: {fileID: 7296977879700965738, guid: d60cc98b4cb944e4fb7b974b54a2b506, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3340236513085688578, guid: fb3ddb8c51c0f1e4ea25f27df02bbe8c, type: 3}
     - target: {fileID: 8248377383789124242, guid: d60cc98b4cb944e4fb7b974b54a2b506, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.52468306
@@ -361,11 +365,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8248377383789124242, guid: d60cc98b4cb944e4fb7b974b54a2b506, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8248377383789124242, guid: d60cc98b4cb944e4fb7b974b54a2b506, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.2
+      value: -2.46
       objectReference: {fileID: 0}
     - target: {fileID: 8248377383789124242, guid: d60cc98b4cb944e4fb7b974b54a2b506, type: 3}
       propertyPath: m_LocalPosition.z
@@ -484,7 +488,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.24, y: 5.76}
+    oldSize: {x: 2.96, y: 5.2}
     newSize: {x: 2.96, y: 5.76}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
