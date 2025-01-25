@@ -4,15 +4,12 @@ using System.Collections.Generic;
 public class BoundsCheck : MonoBehaviour
 {
     [SerializeField] Bounds bounds;
-    private List<DraggableBubble> draggableBubbles = new ();
+    private List<DraggableBubble> draggableBubbles = new();
 
     public void Refresh()
     {
-        foreach(var bubble in draggableBubbles)
-            Destroy(bubble.gameObject);
-            
         draggableBubbles.Clear();
-        
+
         foreach (var draggableBubble in FindObjectsByType<DraggableBubble>(FindObjectsSortMode.None))
         {
             draggableBubbles.Add(draggableBubble);
@@ -33,6 +30,9 @@ public class BoundsCheck : MonoBehaviour
     {
         foreach (DraggableBubble draggableBubble in draggableBubbles)
         {
+            if (draggableBubble == null)
+                continue;
+            
             if (!bounds.Contains(draggableBubble.transform.position))
             {
                 draggableBubble.transform.position = new Vector3(
