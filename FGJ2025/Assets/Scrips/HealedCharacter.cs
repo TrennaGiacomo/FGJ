@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System.Collections;
 using UnityEngine;
 
 public class HealedCharacter : MonoBehaviour
@@ -27,11 +28,21 @@ public class HealedCharacter : MonoBehaviour
 
     public void RunOffAndOnScreen(float duration)
     {
+        StartWalking();
+
         var halfDuration = duration / 2f;
         DOTween.Sequence()
             .Append(transform.DOMoveX(startPosX + 7, halfDuration))
             .AppendInterval(1f)
             .Append(transform.DOMoveX(startPosX, halfDuration - 0.1f))
             .SetEase(Ease.Linear);
+
+        StartCoroutine(WaitToStopWalking());
+    }
+
+    private IEnumerator WaitToStopWalking()
+    {
+        yield return new WaitForSeconds(1f);
+        StopWalking();
     }
 }
