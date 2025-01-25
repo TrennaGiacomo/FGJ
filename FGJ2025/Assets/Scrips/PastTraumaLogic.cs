@@ -24,7 +24,7 @@ public class PastTraumaLogic : ScreenLogic
 
     private void MakeGhostCursors()
     {
-        const int numCursors = 8;
+        const int numCursors = 16;
 
         for (int i = 0; i < numCursors; i++)
         {
