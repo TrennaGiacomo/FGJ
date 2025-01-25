@@ -13,7 +13,7 @@ public class BoundsCheck : MonoBehaviour
 
     private void Start()
     {
-        foreach (DraggableBubble draggableBubble in FindObjectsOfType<DraggableBubble>())
+        foreach (DraggableBubble draggableBubble in FindObjectsByType<DraggableBubble>(FindObjectsSortMode.None))
         {
             draggableBubbles.Add(draggableBubble);
         }

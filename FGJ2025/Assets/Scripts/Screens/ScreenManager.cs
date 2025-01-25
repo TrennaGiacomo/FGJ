@@ -8,6 +8,7 @@ public class ScreenManager : MonoBehaviour
     public UnityEvent<ScreenRoot> OnScreenAppeared = new();
     public UnityEvent OnBeginScroll;
     public UnityEvent OnEndScroll;
+    public UnityEvent OnAllScreensDone = new();
 
     [SerializeField] private ScreenLayouter _layouter;
 
@@ -30,23 +31,15 @@ public class ScreenManager : MonoBehaviour
         _layouter.UpdateLayout();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            MoveToNextScreen();
-        }
-    }
-
     public void MoveToNextScreen()
     {
         if (_moving)
             return;
 
-
         if (_screenIndex + 1 == _screens.Count)
         {
             Debug.LogWarning("No more screens.");
+            OnAllScreensDone.Invoke();
             return;
         }
 

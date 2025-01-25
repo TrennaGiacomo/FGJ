@@ -9,9 +9,32 @@ public class Game : MonoBehaviour
     [SerializeField] private Character _bro;
     [SerializeField] private ChoiceCreator _choiceCreator;
 
+    [SerializeField] private ScreenManager _screenManager;
+
     public DebugCanvas debugCanvas;
 
     private ScreenRoot _currentScreen;
+
+    private bool _gameInProgress;
+    
+    private void Update()
+    {
+        if (!_gameInProgress && Input.GetKeyDown(KeyCode.Space))
+        {
+            StartGame();
+            _gameInProgress = true;
+        }
+    }
+
+    public void StartGame()
+    {
+        _screenManager.MoveToNextScreen();
+    }
+
+    public void EndGame()
+    {
+        // Do something
+    }
 
     public void HandleScreen(ScreenRoot screen)
     {
