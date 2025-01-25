@@ -18,10 +18,13 @@ public class ChoiceCreator : MonoBehaviour
 
     public void CreateChoices()
     {
+        int i = 1;
+
         Vector3 randomPosition;
         foreach (var thought in badThoughts)
         {
-            thoughts.Add(CreateBadThought(thought).gameObject);
+            thoughts.Add(CreateBadThought(thought, i).gameObject);
+            i++;
         }
 
         randomPosition = GetRandomPosition();
@@ -41,10 +44,13 @@ public class ChoiceCreator : MonoBehaviour
         return component;
     }
 
-    public BadThought CreateBadThought(string thought)
+    public BadThought CreateBadThought(string thought, int numberSpawned)
     {
         var randomPosition = GetRandomPosition();
         var badThought = Instantiate(badThoughtPrefab, randomPosition, creationCenter.rotation);
+
+        badThought.GetComponentInChildren<SpriteRenderer>().sortingOrder = numberSpawned;
+        badThought.GetComponentInChildren<Canvas>().sortingOrder = numberSpawned;
 
         var component = badThought.GetComponent<BadThought>();
         component.SetText(thought);
@@ -54,8 +60,8 @@ public class ChoiceCreator : MonoBehaviour
     private Vector3 GetRandomPosition()
     {
         return creationCenter.position
-            + new Vector3(Random.Range(-randOffset, randOffset),
-                Random.Range(-randOffset, randOffset));
+            + new Vector3(Random.Range(-randOffset * 4, randOffset * 4),
+                Random.Range(randOffset, randOffset * 2));
     }
 
     public void ClearChoices()
