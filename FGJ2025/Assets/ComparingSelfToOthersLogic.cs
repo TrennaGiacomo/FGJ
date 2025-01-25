@@ -4,6 +4,12 @@ public class ComparingSelfToOthersLogic : ScreenLogic
 {
     public string[] badComparisons;
 
+    public string[] fakeGoodThoughts;
+
+    public string realGoodThought;
+
+    private GoodThought winningThought;
+
     public override void CleanUp()
     {
         choiceCreator.ClearChoices();
@@ -11,17 +17,26 @@ public class ComparingSelfToOthersLogic : ScreenLogic
 
     public override void PlayLogic()
     {
-        choiceCreator.CreateChoices();
+        var numThoughts = fakeGoodThoughts.Length;
+
+        for (int i = 0; i < numThoughts; i++)
+        {
+            choiceCreator.CreateGoodThought(fakeGoodThoughts[i]);
+        }
+
+        winningThought = choiceCreator.CreateGoodThought(realGoodThought);
     }
 
     protected override void OnGoodThoughtTriggered(GoodThought goodThought)
     {
-        OnComplete.Invoke();
-    }
-
-    protected override void OnBadThoughtTriggered(BadThought badThought)
-    {
-        var randComparison = badComparisons[Random.Range(0, badComparisons.Length)];
-        FindFirstObjectByType<Character>().SaySomething(randComparison);
+        if (goodThought == winningThought)
+        {
+            OnComplete.Invoke();
+        }
+        else
+        {
+            var randComparison = badComparisons[Random.Range(0, badComparisons.Length)];
+            FindFirstObjectByType<Character>().SaySomething(randComparison);
+        }
     }
 }
