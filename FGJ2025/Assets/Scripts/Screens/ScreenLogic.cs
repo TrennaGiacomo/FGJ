@@ -22,20 +22,12 @@ public abstract class ScreenLogic : MonoBehaviour
 
     private void OnDraggableTriggered(GameObject draggable)
     {
-        GoodThought goodThought = null;
-        BadThought badThought = null;
-
-        if (!(draggable.TryGetComponent<GoodThought>(out goodThought)
-            || draggable.TryGetComponent<BadThought>(out badThought)))
-        {
-            return;
-        }
-
-        if (goodThought)
+        if (draggable.TryGetComponent<GoodThought>(out var goodThought))
         {
             OnGoodThoughtTriggered(goodThought);
         }
-        else if (badThought)
+        
+        else if (draggable.TryGetComponent<BadThought>(out var badThought))
         {
             OnBadThoughtTriggered(badThought);
         }

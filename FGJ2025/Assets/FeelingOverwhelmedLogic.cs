@@ -4,11 +4,16 @@ public class FeelingOverwhelmedLogic : ScreenLogic
 {
     public override void CleanUp()
     {
-        throw new System.NotImplementedException();
+        choiceCreator.ClearChoices();
     }
 
     public override void PlayLogic()
     {
-        throw new System.NotImplementedException();
+        choiceCreator.CreateChoices();
+    }
+
+    protected override void OnGoodThoughtTriggered(GoodThought goodThought)
+    {
+        OnComplete.Invoke();
     }
 }

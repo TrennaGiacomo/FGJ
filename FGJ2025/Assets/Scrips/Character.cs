@@ -11,7 +11,7 @@ public class Character : MonoBehaviour
 
     private int _animIdIsWalking;
 
-    private GameObject _speechBubble;
+    [SerializeField] private GameObject _speechBubble;
 
     private void Start()
     {
@@ -36,13 +36,16 @@ public class Character : MonoBehaviour
     private IEnumerator SaySomethingCoroutine(string something)
     {
         _speechBubble.SetActive(true);
-
+        var text = _speechBubble.GetComponentInChildren<TMP_Text>();
         string output = "";
         while(output.Length < something.Length)
         {
             output += something[output.Length];
-            _speechBubble.GetComponentInChildren<TMP_Text>().text = output;
+            text.text = output;
             yield return new WaitForSeconds(0.1f);
         }
+
+        yield return new WaitForSecondsRealtime(3.0f);
+        _speechBubble.SetActive(false);
     }
 }

@@ -5,6 +5,8 @@ public class ScrollableGraphicsContainer : MonoBehaviour
 {
     private List<ScrollableGraphic> _graphics = new();
 
+    public float globalScrollFactor = 1;
+
     private void Start()
     {
         _graphics.AddRange(GetComponentsInChildren<ScrollableGraphic>());
@@ -14,7 +16,7 @@ public class ScrollableGraphicsContainer : MonoBehaviour
     {
         foreach (var g in _graphics)
         {
-            g.Scroll(amount, duration);
+            g.Scroll(amount * globalScrollFactor, duration);
         }
     }
 }

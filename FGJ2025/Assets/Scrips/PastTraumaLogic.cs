@@ -10,16 +10,25 @@ public class PastTraumaLogic : ScreenLogic
 
     public override void PlayLogic()
     {
-        StartCoroutine(PastTraumaCoroutine());
+        MakeGhostCursors();
+        choiceCreator.CreateChoices();
     }
 
-    private IEnumerator PastTraumaCoroutine()
+    public override void CleanUp()
     {
-        yield return null;
+        foreach (var gc in ghostCursors)
+        {
+            Destroy(gc);
+        }
 
-        MakeGhostCursors();
+        ghostCursors.Clear();
 
-        // OnComplete.Invoke();
+        choiceCreator.ClearChoices();
+    }
+
+    protected override void OnGoodThoughtTriggered(GoodThought goodThought)
+    {
+        OnComplete.Invoke();
     }
 
     private void MakeGhostCursors()
@@ -38,15 +47,5 @@ public class PastTraumaLogic : ScreenLogic
 
             ghostCursors.Add(cursor);
         }
-    }
-
-    public override void CleanUp()
-    {
-        foreach (var gc in ghostCursors)
-        {
-            Destroy(gc);
-        }
-
-        ghostCursors.Clear();
-    }
+    }    
 }

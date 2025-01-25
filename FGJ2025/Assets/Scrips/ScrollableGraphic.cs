@@ -10,19 +10,21 @@ public class ScrollableGraphic : MonoBehaviour
 
     public void Scroll(float amount, float duration)
     {
+        Debug.Log("Scrolling", this);
+
         if (!_scrollableRenderer || !_scrollableRenderer.material)
             return;
 
         _scrollableRenderer.material.DOKill();
 
         var texScale = _scrollableRenderer.material.mainTextureScale;
-        var texOffset = _scrollableRenderer.material.mainTextureOffset;
+        var currentOffset = _scrollableRenderer.material.mainTextureOffset;
 
-        var offset = texOffset.x + amount;
+        var normalizedOffset = _scrollFactor * amount / texScale.x;
 
-        var normalizedOffset = _scrollFactor * offset / texScale.x;
+        var targetOffset = currentOffset + new Vector2(normalizedOffset, 0);
 
-        var targetOffset = texOffset + new Vector2(normalizedOffset, 0);
+        Debug.Log(targetOffset);
 
         _scrollableRenderer.material
             .DOOffset(endValue: targetOffset, duration)

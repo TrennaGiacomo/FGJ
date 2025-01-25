@@ -319,7 +319,7 @@ Transform:
   m_GameObject: {fileID: 348133934}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
   m_LocalScale: {x: 18.4977, y: 10.3738, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -338,7 +338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scrollableRenderer: {fileID: 348133937}
-  _scrollFactor: 0.6
+  _scrollFactor: 1
 --- !u!23 &348133937
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -517,6 +517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detector: {fileID: 831788792}
   _animator: {fileID: 2034430001}
+  _speechBubble: {fileID: 1445046818}
 --- !u!1 &700277953
 GameObject:
   m_ObjectHideFlags: 0
@@ -934,7 +935,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 18, y: 10, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 352335502}
@@ -971,8 +972,13 @@ MonoBehaviour:
   creationCenter: {fileID: 1014351897}
   goodThoughtText: Loistavaa
   badThoughts:
-  - Frocio
-  - Federica la mano amica
+  - BadThought
+  - BadThought
+  - BadThought
+  - BadThought
+  - BadThought
+  - BadThought
+  - BadThought
 --- !u!114 &1014351900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -987,8 +993,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bounds:
     m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 9, y: 5, z: 0}
-  _screenLogic: {fileID: 0}
+    m_Extent: {x: 1, y: 1, z: 0}
+  _screenLogic: {fileID: 1014351898}
 --- !u!1 &1081153145
 GameObject:
   m_ObjectHideFlags: 0
@@ -1186,7 +1192,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 18, y: 10, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 352335502}
@@ -1211,8 +1217,8 @@ MonoBehaviour:
   creationCenter: {fileID: 1207821941}
   goodThoughtText: No Juu
   badThoughts:
-  - VITTU!!!
-  - Saarine
+  - BadThought
+  - BadThought
 --- !u!114 &1207821944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1227,7 +1233,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bounds:
     m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 9, y: 5, z: 0}
+    m_Extent: {x: 1, y: 1, z: 0}
   _screenLogic: {fileID: 1207821945}
 --- !u!114 &1207821945
 MonoBehaviour:
@@ -1270,7 +1276,7 @@ Transform:
   m_GameObject: {fileID: 1213272172}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 18.4977, y: 10.3738, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1289,7 +1295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scrollableRenderer: {fileID: 1213272175}
-  _scrollFactor: 0.6
+  _scrollFactor: 1
 --- !u!23 &1213272175
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1565,7 +1571,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 18, y: 10, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 352335502}
@@ -1584,8 +1590,95 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bounds:
     m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 9, y: 5, z: 0}
+    m_Extent: {x: 1, y: 1, z: 0}
   _screenLogic: {fileID: 0}
+--- !u!1 &1737330293
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1737330294}
+  - component: {fileID: 1737330297}
+  - component: {fileID: 1737330296}
+  - component: {fileID: 1737330295}
+  m_Layer: 0
+  m_Name: ComparingSelfToOthers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1737330294
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737330293}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 352335502}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1737330295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737330293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21dd4ce998db1ec42b3f40765dcaf641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  badComparisons:
+  - Someone else is better than me
+--- !u!114 &1737330296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737330293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3214ee3ab5183dd4e933a0d784e8ecc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnChoicesCreated:
+    m_PersistentCalls:
+      m_Calls: []
+  goodThoughtPrefab: {fileID: 1339513969306659671, guid: 21d10f3000af158469f8385665b66661, type: 3}
+  badThoughtPrefab: {fileID: 1339513969306659671, guid: 84a43f6e8805a674686b760feba63cb6, type: 3}
+  creationCenter: {fileID: 1737330294}
+  goodThoughtText: Loistavaa
+  badThoughts:
+  - BadThought
+  - BadThought
+  - BadThought
+--- !u!114 &1737330297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737330293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7f4074514a610e4c8c2e5913e45efe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 1, y: 1, z: 0}
+  _screenLogic: {fileID: 1737330295}
 --- !u!114 &1851750508 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5198604077307562874, guid: b7c0a57bb673502498370c6ec2b98771, type: 3}
@@ -1630,8 +1723,8 @@ MonoBehaviour:
   creationCenter: {fileID: 9211139145777613271}
   goodThoughtText: Loistavaa
   badThoughts:
-  - Frocio
-  - Federica la mano amica
+  - BadThought
+  - BadThought
 --- !u!1001 &2034429999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1719,6 +1812,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 985944959}
     m_Modifications:
+    - target: {fileID: 1268020043506282684, guid: 03ba85c5ca426e849bb06958bfa48591, type: 3}
+      propertyPath: globalScrollFactor
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1728090626991432954, guid: 03ba85c5ca426e849bb06958bfa48591, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2623240239547269626, guid: 03ba85c5ca426e849bb06958bfa48591, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2682933145266944746, guid: 03ba85c5ca426e849bb06958bfa48591, type: 3}
       propertyPath: _scrollFactor
       value: 0.08
@@ -1730,6 +1835,10 @@ PrefabInstance:
     - target: {fileID: 5206128445156708789, guid: 03ba85c5ca426e849bb06958bfa48591, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6097483011637495457, guid: 03ba85c5ca426e849bb06958bfa48591, type: 3}
+      propertyPath: _scrollFactor
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6669770724270195644, guid: 03ba85c5ca426e849bb06958bfa48591, type: 3}
       propertyPath: problem
@@ -1788,8 +1897,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8775137663443550218, guid: 03ba85c5ca426e849bb06958bfa48591, type: 3}
+      propertyPath: _screenWidth
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8775137663443550218, guid: 03ba85c5ca426e849bb06958bfa48591, type: 3}
       propertyPath: _scrollDuration
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8775137663443550218, guid: 03ba85c5ca426e849bb06958bfa48591, type: 3}
       propertyPath: _bridgeAnimation
@@ -1828,6 +1941,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4484283680898125103, guid: 03ba85c5ca426e849bb06958bfa48591, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1662386291}
+    - targetCorrespondingSourceObject: {fileID: 4484283680898125103, guid: 03ba85c5ca426e849bb06958bfa48591, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1737330294}
     - targetCorrespondingSourceObject: {fileID: 4484283680898125103, guid: 03ba85c5ca426e849bb06958bfa48591, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1207821941}
@@ -1872,7 +1988,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bounds:
     m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 9, y: 5, z: 0}
+    m_Extent: {x: 1, y: 1, z: 0}
   _screenLogic: {fileID: 1954945496}
 --- !u!4 &9211139145777613271
 Transform:
@@ -1884,7 +2000,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 18, y: 10, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 352335502}
