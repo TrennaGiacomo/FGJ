@@ -15,12 +15,14 @@ public class FindingBalanceLogic : ScreenLogic
 
     public override void PlayLogic()
     {
-        var numThoughts = othersAttributes.Length;
+        choiceCreator.CreateChoices();
 
-        for (int i = 0; i < numThoughts; i++)
-        {
-            choiceCreator.CreateGoodThought(othersAttributes[i]);
-        }
+        //var numThoughts = othersAttributes.Length;
+
+        // (int i = 0; i < numThoughts; i++)
+        //{
+        //    choiceCreator.CreateBadThought(othersAttributes[i], i);
+        //}
 
         correctThought = choiceCreator.CreateGoodThought(selfAttribute);
     }
@@ -30,11 +32,12 @@ public class FindingBalanceLogic : ScreenLogic
         if (goodThought == correctThought)
         {
             OnComplete.Invoke();
+            CleanUp();
         }
         else
         {
             FindFirstObjectByType<Character>()
-                .SaySomething($"{goodThought.text.text} doesn't quite feel like me");
+                .SaySomething($"But what about {othersAttributes[Random.Range(0, othersAttributes.Length)]}?");
         }
     }
 }

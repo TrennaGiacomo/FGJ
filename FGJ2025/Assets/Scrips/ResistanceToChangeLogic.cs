@@ -4,7 +4,7 @@ public class ResistanceToChangeLogic : ScreenLogic
 {
     public override void CleanUp()
     {
-        // Is there anything to clean up from here?
+        choiceCreator.ClearChoices();
     }
 
     public override void PlayLogic()

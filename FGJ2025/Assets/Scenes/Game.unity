@@ -1244,15 +1244,18 @@ MonoBehaviour:
   goodThoughtPrefab: {fileID: 1339513969306659671, guid: 21d10f3000af158469f8385665b66661, type: 3}
   badThoughtPrefab: {fileID: 1339513969306659671, guid: 84a43f6e8805a674686b760feba63cb6, type: 3}
   creationCenter: {fileID: 1014351897}
-  goodThoughtText: Loistavaa
+  goodThoughtText: Take one thing at a time
   badThoughts:
-  - BadThought
-  - BadThought
-  - BadThought
-  - BadThought
-  - BadThought
-  - BadThought
-  - BadThought
+  - I need to pay bills
+  - I have to clean my house
+  - I should exercise
+  - They expect me to be social
+  - I must reach my goals
+  - I need to be useful
+  - What am I doing?
+  - Is my life going anywhere?
+  - I need to catch up
+  - I'm getting left behind
 --- !u!114 &1014351900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1863,9 +1866,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   othersAttributes:
-  - Other'sAttribute
-  - Other'sAttribute
-  - Other'sAttribute
+  - being a good friend
+  - being there for my family
+  - my partner
   selfAttribute: SelfAttribute
 --- !u!114 &1622307467
 MonoBehaviour:
@@ -1885,8 +1888,13 @@ MonoBehaviour:
   goodThoughtPrefab: {fileID: 1339513969306659671, guid: 21d10f3000af158469f8385665b66661, type: 3}
   badThoughtPrefab: {fileID: 1339513969306659671, guid: 84a43f6e8805a674686b760feba63cb6, type: 3}
   creationCenter: {fileID: 1622307465}
-  goodThoughtText: 
-  badThoughts: []
+  goodThoughtText: I need to take care of myself
+  badThoughts:
+  - I have to be a good friend
+  - I must be there for my family
+  - My partner counts on me
+  - I have to get that promotion
+  - I need to get the highest grades
 --- !u!114 &1622307468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2046,8 +2054,9 @@ MonoBehaviour:
   goodThoughtPrefab: {fileID: 1339513969306659671, guid: 21d10f3000af158469f8385665b66661, type: 3}
   badThoughtPrefab: {fileID: 1339513969306659671, guid: 84a43f6e8805a674686b760feba63cb6, type: 3}
   creationCenter: {fileID: 1737330294}
-  goodThoughtText: 
-  badThoughts: []
+  goodThoughtText: I am enough
+  badThoughts:
+  - 
 --- !u!114 &1737330297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2106,10 +2115,13 @@ MonoBehaviour:
   goodThoughtPrefab: {fileID: 1339513969306659671, guid: 21d10f3000af158469f8385665b66661, type: 3}
   badThoughtPrefab: {fileID: 1339513969306659671, guid: 84a43f6e8805a674686b760feba63cb6, type: 3}
   creationCenter: {fileID: 9211139145777613271}
-  goodThoughtText: Loistavaa
+  goodThoughtText: Things can get better
   badThoughts:
-  - BadThought
-  - BadThought
+  - I'm a failure
+  - I'm doomed
+  - Life will never get better
+  - I'm damaged
+  - My life is ruined
 --- !u!1001 &2034429999
 PrefabInstance:
   m_ObjectHideFlags: 0
