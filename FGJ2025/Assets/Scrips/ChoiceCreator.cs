@@ -5,34 +5,52 @@ using UnityEngine.Events;
 public class ChoiceCreator : MonoBehaviour
 {
     public UnityEvent OnChoicesCreated = new();
-    public GameObject[] choicePrefabs;
+    public GameObject goodThoughtPrefab;
+    public GameObject badThoughtPrefab;
 
     public Transform creationCenter;
 
-    private List<GameObject> _choices = new();
+    private List<GameObject> thoughts = new();
+
+    public string goodThoughtText;
+    public string[] badThoughts;
 
     public void CreateChoices()
-    {   
+    {
         const float randOffset = 1.5f;
-        foreach (GameObject choicePrefab in choicePrefabs)
+        Vector3 randomPosition;
+        foreach (var thought in badThoughts)
         {
-            Vector3 randomPosition = creationCenter.position 
-                + new Vector3(Random.Range(-randOffset, randOffset), 
-                    Random.Range(-randOffset, randOffset));
+            randomPosition = GetRandomPosition(randOffset);
+            var badThought = Instantiate(badThoughtPrefab, randomPosition, creationCenter.rotation);
+            thoughts.Add(badThought);
 
-            _choices.Add(Instantiate(choicePrefab, randomPosition, creationCenter.rotation));
+            badThought.GetComponent<BadThought>().SetText(thought);
         }
+
+        randomPosition = GetRandomPosition(randOffset);
+        var goodThought = Instantiate(goodThoughtPrefab, randomPosition, creationCenter.rotation);
+        thoughts.Add(goodThought);
+
+        goodThought.GetComponent<GoodThought>().SetText(goodThoughtText);
 
         OnChoicesCreated.Invoke();
     }
 
+    private Vector3 GetRandomPosition(float randOffset)
+    {
+        return creationCenter.position
+            + new Vector3(Random.Range(-randOffset, randOffset),
+                Random.Range(-randOffset, randOffset));
+    }
+
     public void ClearChoices()
     {
-        foreach(var choice in _choices)
+        foreach (var choice in thoughts)
         {
             Destroy(choice);
         }
 
-        _choices.Clear();
+        thoughts.Clear();
     }
 }

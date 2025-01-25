@@ -864,10 +864,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScreenTemplate
       objectReference: {fileID: 0}
-    - target: {fileID: 9115047246890463736, guid: baac5469517bfb54091514a40c781de2, type: 3}
-      propertyPath: problem
-      value: 
-      objectReference: {fileID: 1807026504885411075}
     - target: {fileID: 9211139147178381314, guid: baac5469517bfb54091514a40c781de2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -911,30 +907,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7696383703399621617, guid: baac5469517bfb54091514a40c781de2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1807026504885411075}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: baac5469517bfb54091514a40c781de2, type: 3}
---- !u!1 &5206128445156708789 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7696383703399621617, guid: baac5469517bfb54091514a40c781de2, type: 3}
-  m_PrefabInstance: {fileID: 2517773942788338244}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1807026504885411075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5206128445156708789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f0b645066aa74d488403ca18f2db393, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  problemType: 0
-  solution: 0
 --- !u!4 &6711599638390055494 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9211139147178381314, guid: baac5469517bfb54091514a40c781de2, type: 3}
