@@ -30,10 +30,12 @@ public class ScreenManager : MonoBehaviour
     private bool _moving;
 
     private Heart heart;
+    private TextManager textManager;
 
     private void Start()
     {
         heart = FindObjectOfType<Heart>();
+        textManager = FindObjectOfType<TextManager>();
         _screens.AddRange(_layouter.Root.GetComponentsInChildren<ScreenRoot>());
         _layouter.ScreenWidth = _screenWidth;
         _layouter.UpdateLayout();
@@ -45,8 +47,9 @@ public class ScreenManager : MonoBehaviour
             return;
 
         if(_screenIndex != 0)
-           heart.SetHeartSprite();
-
+        {
+            heart.SetHeartSprite();
+        }
         if (_screenIndex + 1 == _screens.Count)
         {
             Debug.LogWarning("No more screens.");
@@ -55,6 +58,7 @@ public class ScreenManager : MonoBehaviour
         }
 
         _moving = true;
+        textManager.SetStringToEmpty();
 
         OnBeginScroll.Invoke();
 
@@ -69,6 +73,7 @@ public class ScreenManager : MonoBehaviour
                 _layouter.Scroll(scrollAmount, _scrollDuration, callback: () =>
                 {
                     _moving = false;
+                    textManager.UpdateScreenName();
                     _screenIndex++;
 
                     OnEndScroll.Invoke();
