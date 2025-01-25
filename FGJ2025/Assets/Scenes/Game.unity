@@ -522,6 +522,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1081153146}
   - component: {fileID: 1081153147}
+  - component: {fileID: 1081153148}
   m_Layer: 0
   m_Name: Heart
   m_TagString: Untagged
@@ -538,9 +539,9 @@ Transform:
   m_GameObject: {fileID: 1081153145}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.1, z: 0}
-  m_LocalScale: {x: 0.09152411, y: 0.09152411, z: 0.09152411}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0.013, y: 0.106, z: 0}
+  m_LocalScale: {x: 0.09000001, y: 0.09000001, z: 0.09000001}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 542044690}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -599,6 +600,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1081153148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081153145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 870392c9f34870e468e0dd835eccc252, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxScale: 0.18
+  beatDuration: 0.1
+  pauseDuration: 0.5
 --- !u!1 &1088775860
 GameObject:
   m_ObjectHideFlags: 0
