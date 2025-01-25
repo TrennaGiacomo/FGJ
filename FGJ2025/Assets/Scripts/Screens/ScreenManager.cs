@@ -29,8 +29,11 @@ public class ScreenManager : MonoBehaviour
 
     private bool _moving;
 
+    private Heart heart;
+
     private void Start()
     {
+        heart = FindObjectOfType<Heart>();
         _screens.AddRange(_layouter.Root.GetComponentsInChildren<ScreenRoot>());
         _layouter.ScreenWidth = _screenWidth;
         _layouter.UpdateLayout();
@@ -40,6 +43,9 @@ public class ScreenManager : MonoBehaviour
     {
         if (_moving)
             return;
+
+        if(_screenIndex != 0)
+           heart.SetHeartSprite();
 
         if (_screenIndex + 1 == _screens.Count)
         {
