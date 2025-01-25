@@ -2224,6 +2224,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 985944959}
     m_Modifications:
+    - target: {fileID: 998527884632376873, guid: 03ba85c5ca426e849bb06958bfa48591, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1268020043506282684, guid: 03ba85c5ca426e849bb06958bfa48591, type: 3}
       propertyPath: globalScrollFactor
       value: 0.5
@@ -2231,6 +2235,10 @@ PrefabInstance:
     - target: {fileID: 1728090626991432954, guid: 03ba85c5ca426e849bb06958bfa48591, type: 3}
       propertyPath: m_LocalPosition.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2623240239547269626, guid: 03ba85c5ca426e849bb06958bfa48591, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: 2623240239547269626, guid: 03ba85c5ca426e849bb06958bfa48591, type: 3}
       propertyPath: m_LocalPosition.z
