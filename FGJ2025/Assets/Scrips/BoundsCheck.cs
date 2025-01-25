@@ -8,8 +8,6 @@ public class BoundsCheck : MonoBehaviour
 
     public void Refresh()
     {
-        draggableBubbles.Clear();
-
         foreach (var draggableBubble in FindObjectsByType<DraggableBubble>(FindObjectsSortMode.None))
         {
             draggableBubbles.Add(draggableBubble);
