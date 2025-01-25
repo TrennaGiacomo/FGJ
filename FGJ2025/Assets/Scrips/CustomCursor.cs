@@ -1,10 +1,7 @@
 using UnityEngine;
 
 public class CustomCursor : MonoBehaviour
-{
-    public SpriteRenderer spriteRenderer;
-    public Vector2 offset;
-    
+{    
     public float sensitivity;
 
     private Vector2 _cursorPosition;
@@ -36,6 +33,6 @@ public class CustomCursor : MonoBehaviour
         _cursorPosition.x = Mathf.Clamp(_cursorPosition.x, Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0)).x, Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, 0)).x);
         _cursorPosition.y = Mathf.Clamp(_cursorPosition.y, Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0)).y, Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height, 0)).y);
 
-        spriteRenderer.transform.position = _cursorPosition + offset;
+        transform.position = _cursorPosition;
     }
 }
