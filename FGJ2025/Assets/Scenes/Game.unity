@@ -169,11 +169,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5198604077307562874, guid: b7c0a57bb673502498370c6ec2b98771, type: 3}
       propertyPath: bounds.m_Extent.x
-      value: 8.31
+      value: 7.65
       objectReference: {fileID: 0}
     - target: {fileID: 5198604077307562874, guid: b7c0a57bb673502498370c6ec2b98771, type: 3}
       propertyPath: bounds.m_Extent.y
-      value: 4.59
+      value: 3.69
       objectReference: {fileID: 0}
     - target: {fileID: 8885986345274515005, guid: b7c0a57bb673502498370c6ec2b98771, type: 3}
       propertyPath: m_LocalPosition.x

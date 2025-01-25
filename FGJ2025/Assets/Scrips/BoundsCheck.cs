@@ -8,6 +8,9 @@ public class BoundsCheck : MonoBehaviour
 
     public void Refresh()
     {
+        foreach(var bubble in draggableBubbles)
+            Destroy(bubble.gameObject);
+            
         draggableBubbles.Clear();
         
         foreach (var draggableBubble in FindObjectsByType<DraggableBubble>(FindObjectsSortMode.None))
