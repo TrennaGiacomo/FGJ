@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: 4457439543424095738}
   - component: {fileID: 3964767505917912328}
   - component: {fileID: 3477775622966449987}
+  - component: {fileID: 5936318732911314749}
   m_Layer: 0
   m_Name: Choice
   m_TagString: Untagged
@@ -194,7 +195,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.430245, y: 0.5029028}
   m_EdgeRadius: 0
 --- !u!114 &3964767505917912328
 MonoBehaviour:
@@ -208,6 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9302a20a99f58794babdae7fc4eb9203, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDragging: 0
 --- !u!114 &3477775622966449987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,3 +223,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   solutionType: 0
+--- !u!114 &5936318732911314749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1339513969306659671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29c1b4e35793ec443b4f53818689667d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

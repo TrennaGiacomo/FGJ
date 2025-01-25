@@ -4,7 +4,17 @@ using System.Collections.Generic;
 public class BoundsCheck : MonoBehaviour
 {
     [SerializeField] Bounds bounds;
-    private List<DraggableBubble> draggableBubbles = new List<DraggableBubble>();
+    private List<DraggableBubble> draggableBubbles = new ();
+
+    public void Refresh()
+    {
+        draggableBubbles.Clear();
+        
+        foreach (var draggableBubble in FindObjectsByType<DraggableBubble>(FindObjectsSortMode.None))
+        {
+            draggableBubbles.Add(draggableBubble);
+        }
+    }
 
     private void OnDrawGizmos()
     {
@@ -13,10 +23,7 @@ public class BoundsCheck : MonoBehaviour
 
     private void Start()
     {
-        foreach (DraggableBubble draggableBubble in FindObjectsByType<DraggableBubble>(FindObjectsSortMode.None))
-        {
-            draggableBubbles.Add(draggableBubble);
-        }
+        Refresh();
     }
 
     private void Update()

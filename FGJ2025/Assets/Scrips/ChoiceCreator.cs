@@ -1,8 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ChoiceCreator : MonoBehaviour
 {
+    public UnityEvent OnChoicesCreated = new();
     public GameObject[] choicePrefabs;
 
     public Transform creationCenter;
@@ -20,6 +22,8 @@ public class ChoiceCreator : MonoBehaviour
 
             _choices.Add(Instantiate(choicePrefab, randomPosition, creationCenter.rotation));
         }
+
+        OnChoicesCreated.Invoke();
     }
 
     public void ClearChoices()
