@@ -9,7 +9,7 @@ public class Problem : MonoBehaviour
 {
     public ProblemType problemType;
 
-    public ProblemChoice solution;
+    public SolutionType solution;
 
     public void SolveProblem()
     {

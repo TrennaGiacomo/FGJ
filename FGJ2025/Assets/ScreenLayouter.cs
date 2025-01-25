@@ -26,6 +26,8 @@ public class ScreenLayouter : MonoBehaviour
     public virtual void Scroll(float amount, float duration, Action callback = null)
     {
         var nextRootPos = ScreenRoot.transform.position.x + amount;
+
+        ScreenRoot.transform.DOKill();
         ScreenRoot.transform.DOMoveX(endValue: nextRootPos, 
             duration: duration).SetEase(Ease.Linear)
             .OnComplete(() => { callback?.Invoke(); });

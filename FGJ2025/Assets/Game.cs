@@ -62,7 +62,7 @@ public class Game : MonoBehaviour
 
     IEnumerator CheckSolution(ScreenRoot screen, ProblemChoice choice)
     {
-        if (choice == screen.problem.solution)
+        if (choice.solutionType == screen.problem.solution)
         {
             // Nice
         }
