@@ -3,6 +3,8 @@ using UnityEngine.Events;
 
 public class Character : MonoBehaviour
 {
+    public DraggableDetector detector;
+
     [SerializeField] private Animator _animator;
 
     private int _animIdIsWalking;

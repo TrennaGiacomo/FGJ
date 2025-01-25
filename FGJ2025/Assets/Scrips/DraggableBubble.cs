@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Collider2D))]
 public class DraggableBubble : MonoBehaviour
 {
     private Vector3 offset;
@@ -9,10 +10,14 @@ public class DraggableBubble : MonoBehaviour
 
     private CustomCursor _cursor;
 
+    private Collider2D _collider;
+
     void Start()
     {
         mainCamera = Camera.main;
         _cursor = FindFirstObjectByType<CustomCursor>();
+
+        _collider = GetComponent<Collider2D>();
     }
 
     void OnMouseDown()
@@ -32,7 +37,7 @@ public class DraggableBubble : MonoBehaviour
 
     private void Update()
     {
-        if (Vector3.Distance(_cursor.transform.position, transform.position) < 1.0f)
+        if (_collider.bounds.Contains(_cursor.transform.position))
         {
             if (Input.GetMouseButtonDown(0))
                 OnMouseDown();
