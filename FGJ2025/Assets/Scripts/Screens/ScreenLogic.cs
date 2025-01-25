@@ -11,6 +11,8 @@ public abstract class ScreenLogic : MonoBehaviour
 
     protected ChoiceCreator choiceCreator;
 
+    public bool isActive { get; set; }
+
     private void Start()
     {
         choiceCreator = GetComponent<ChoiceCreator>();
@@ -20,8 +22,11 @@ public abstract class ScreenLogic : MonoBehaviour
             .AddListener(OnDraggableTriggered);
     }
 
-    private void OnDraggableTriggered(GameObject draggable)
+    protected void OnDraggableTriggered(GameObject draggable)
     {
+        if (!isActive)
+            return;
+
         if (draggable.TryGetComponent<GoodThought>(out var goodThought))
         {
             OnGoodThoughtTriggered(goodThought);

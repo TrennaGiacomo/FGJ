@@ -30,6 +30,7 @@ public class Character : MonoBehaviour
 
     public void SaySomething(string something)
     {
+        StopCoroutine(SaySomethingCoroutine(""));
         StartCoroutine(SaySomethingCoroutine(something));
     }
 

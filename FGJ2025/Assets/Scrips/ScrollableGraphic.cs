@@ -10,8 +10,6 @@ public class ScrollableGraphic : MonoBehaviour
 
     public void Scroll(float amount, float duration)
     {
-        Debug.Log("Scrolling", this);
-
         if (!_scrollableRenderer || !_scrollableRenderer.material)
             return;
 
@@ -23,8 +21,6 @@ public class ScrollableGraphic : MonoBehaviour
         var normalizedOffset = _scrollFactor * amount / texScale.x;
 
         var targetOffset = currentOffset + new Vector2(normalizedOffset, 0);
-
-        Debug.Log(targetOffset);
 
         _scrollableRenderer.material
             .DOOffset(endValue: targetOffset, duration)
