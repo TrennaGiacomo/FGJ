@@ -10,6 +10,11 @@ public class ScreenManager : MonoBehaviour
     public UnityEvent OnEndScroll;
     public UnityEvent OnAllScreensDone = new();
 
+    public HealedCharacter healedBro;
+
+    [SerializeField] private GameObject _initialNoRavineGround;
+    [SerializeField] private BridgeAnimation _bridgeAnimation;
+
     [SerializeField] private ScreenLayouter _layouter;
 
     [SerializeField] private ScrollableGraphicsContainer _scrollableGraphics;
@@ -50,17 +55,24 @@ public class ScreenManager : MonoBehaviour
         var nextScreen = _screens[_screenIndex + 1];
 
         var scrollAmount = -_screenWidth;
-        _layouter.Scroll(scrollAmount, _scrollDuration, callback: () =>
-        {
-            _moving = false;
-            _screenIndex++;
 
-            OnEndScroll.Invoke();
-            OnScreenAppeared.Invoke(nextScreen);
-        });
+        healedBro.RunOffAndOnScreen(_scrollDuration);
 
-        // Graphics need to scroll in the opposite direction,
-        // since they "move" relative to the screens
-        _scrollableGraphics.Scroll(-scrollAmount, _scrollDuration);
+        _bridgeAnimation.Animate(onFinish: () =>
+            {
+                _layouter.Scroll(scrollAmount, _scrollDuration, callback: () =>
+                {
+                    _moving = false;
+                    _screenIndex++;
+
+                    OnEndScroll.Invoke();
+                    OnScreenAppeared.Invoke(nextScreen);
+                });
+
+                // Graphics need to scroll in the opposite direction,
+                // since they "move" relative to the screens
+                _scrollableGraphics.Scroll(-scrollAmount, _scrollDuration);
+            });
+
     }
 }

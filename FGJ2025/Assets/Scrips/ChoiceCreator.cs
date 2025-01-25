@@ -14,34 +14,54 @@ public class ChoiceCreator : MonoBehaviour
 
     public string goodThoughtText;
     public string[] badThoughts;
+    const float randOffset = 1.5f;
 
     public void CreateChoices()
     {
-        const float randOffset = 1.5f;
+        int i = 1;
+
         Vector3 randomPosition;
         foreach (var thought in badThoughts)
         {
-            randomPosition = GetRandomPosition(randOffset);
-            var badThought = Instantiate(badThoughtPrefab, randomPosition, creationCenter.rotation);
-            thoughts.Add(badThought);
-
-            badThought.GetComponent<BadThought>().SetText(thought);
+            thoughts.Add(CreateBadThought(thought, i).gameObject);
+            i++;
         }
 
-        randomPosition = GetRandomPosition(randOffset);
-        var goodThought = Instantiate(goodThoughtPrefab, randomPosition, creationCenter.rotation);
-        thoughts.Add(goodThought);
-
-        goodThought.GetComponent<GoodThought>().SetText(goodThoughtText);
+        randomPosition = GetRandomPosition();
+        thoughts.Add(CreateGoodThought(goodThoughtText).gameObject);
 
         OnChoicesCreated.Invoke();
     }
 
-    private Vector3 GetRandomPosition(float randOffset)
+    public GoodThought CreateGoodThought(string text)
+    {
+        var randomPosition = GetRandomPosition();
+        var goodThought = Instantiate(goodThoughtPrefab, randomPosition, creationCenter.rotation);
+
+        var component = goodThought.GetComponent<GoodThought>();
+        component.SetText(goodThoughtText);
+
+        return component;
+    }
+
+    public BadThought CreateBadThought(string thought, int numberSpawned)
+    {
+        var randomPosition = GetRandomPosition();
+        var badThought = Instantiate(badThoughtPrefab, randomPosition, creationCenter.rotation);
+
+        badThought.GetComponentInChildren<SpriteRenderer>().sortingOrder = numberSpawned;
+        badThought.GetComponentInChildren<Canvas>().sortingOrder = numberSpawned;
+
+        var component = badThought.GetComponent<BadThought>();
+        component.SetText(thought);
+        return component;
+    }
+
+    private Vector3 GetRandomPosition()
     {
         return creationCenter.position
-            + new Vector3(Random.Range(-randOffset, randOffset),
-                Random.Range(-randOffset, randOffset));
+            + new Vector3(Random.Range(-randOffset * 4, randOffset * 4),
+                Random.Range(randOffset, randOffset * 2));
     }
 
     public void ClearChoices()

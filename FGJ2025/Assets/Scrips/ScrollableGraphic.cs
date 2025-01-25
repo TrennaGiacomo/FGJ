@@ -1,5 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.Events;
 
 public class ScrollableGraphic : MonoBehaviour
 {
@@ -15,13 +16,11 @@ public class ScrollableGraphic : MonoBehaviour
         _scrollableRenderer.material.DOKill();
 
         var texScale = _scrollableRenderer.material.mainTextureScale;
-        var texOffset = _scrollableRenderer.material.mainTextureOffset;
+        var currentOffset = _scrollableRenderer.material.mainTextureOffset;
 
-        var offset = texOffset.x + amount;
+        var normalizedOffset = _scrollFactor * amount / texScale.x;
 
-        var normalizedOffset = _scrollFactor * offset / texScale.x;
-
-        var targetOffset = texOffset + new Vector2(normalizedOffset, 0);
+        var targetOffset = currentOffset + new Vector2(normalizedOffset, 0);
 
         _scrollableRenderer.material
             .DOOffset(endValue: targetOffset, duration)

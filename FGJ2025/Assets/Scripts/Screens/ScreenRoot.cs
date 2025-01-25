@@ -11,12 +11,14 @@ public class ScreenRoot : MonoBehaviour
     public void StartScreen()
     {
         _screenLogic.OnComplete.AddListener(OnLogicComplete);
+        _screenLogic.isActive = true;
         _screenLogic.PlayLogic();
     }
 
     private void OnLogicComplete()
     {
         OnComplete.Invoke();
+        _screenLogic.isActive = false;
         _screenLogic.CleanUp();
     }
 
