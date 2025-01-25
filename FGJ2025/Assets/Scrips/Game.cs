@@ -40,44 +40,7 @@ public class Game : MonoBehaviour
     {
         _currentScreen = screen;
 
-        debugCanvas.DebugScreen(screen);
-
-        // Solving logic
-        _bro.StartThinking();
-
-        _choiceCreator.CreateChoices();
-    }
-
-    public void HandleChoice(ProblemChoice choice)
-    {
-        var screen = _currentScreen;
-
-        _bro.StopThinking();
-
-        _choiceCreator.ClearChoices();
-
-        StartCoroutine(CheckSolution(screen, choice));
-        _currentScreen = null;
-    }
-
-    IEnumerator CheckSolution(ScreenRoot screen, ProblemChoice choice)
-    {
-        if (choice.solutionType == screen.problem.solution)
-        {
-            // Nice
-        }
-
-
-        // Else
-        // fail
-
-        // Do something...
-        debugCanvas.debugText.text = "Checking answer...";
-        yield return new WaitForSecondsRealtime(3.0f);
-
-        
-        debugCanvas.debugText.text = "";
-
-        OnFinishCurrentScreen.Invoke();
+        _currentScreen.OnComplete.AddListener(OnFinishCurrentScreen.Invoke);
+        _currentScreen.StartScreen();   
     }
 }

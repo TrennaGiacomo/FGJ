@@ -1,10 +1,24 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ScreenRoot : MonoBehaviour
 {
     public Bounds bounds;
+    public UnityEvent OnComplete { get; } = new();
 
-    public Problem problem;
+    [SerializeField] private ScreenLogic _screenLogic;
+
+    public void StartScreen()
+    {
+        _screenLogic.OnComplete.AddListener(OnLogicComplete);
+        _screenLogic.PlayLogic();
+    }
+
+    private void OnLogicComplete()
+    {
+        OnComplete.Invoke();
+        _screenLogic.CleanUp();
+    }
 
     private void OnDrawGizmos()
     {
