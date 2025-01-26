@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 205, y: 50}
+  m_AnchoredPosition: {x: 60, y: 50}
   m_SizeDelta: {x: 800, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &110806590
@@ -1591,6 +1591,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1438656145672518854, guid: b72ca275497f0cd4d96790a357db7a05, type: 3}
+      propertyPath: badComparisonsSentence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1438656145672518854, guid: b72ca275497f0cd4d96790a357db7a05, type: 3}
+      propertyPath: 'badComparisonsSentence.Array.data[0]'
+      value: is surely better at this
+      objectReference: {fileID: 0}
+    - target: {fileID: 1438656145672518854, guid: b72ca275497f0cd4d96790a357db7a05, type: 3}
+      propertyPath: 'badComparisonsSentence.Array.data[1]'
+      value: would do a better job
+      objectReference: {fileID: 0}
+    - target: {fileID: 9000020829136508416, guid: b72ca275497f0cd4d96790a357db7a05, type: 3}
+      propertyPath: 'badThoughts.Array.data[0]'
+      value: I am good at school
+      objectReference: {fileID: 0}
+    - target: {fileID: 9000020829136508416, guid: b72ca275497f0cd4d96790a357db7a05, type: 3}
+      propertyPath: 'badThoughts.Array.data[1]'
+      value: I am good at sports
+      objectReference: {fileID: 0}
+    - target: {fileID: 9000020829136508416, guid: b72ca275497f0cd4d96790a357db7a05, type: 3}
+      propertyPath: 'badThoughts.Array.data[2]'
+      value: I am good at cooking
+      objectReference: {fileID: 0}
+    - target: {fileID: 9000020829136508416, guid: b72ca275497f0cd4d96790a357db7a05, type: 3}
+      propertyPath: 'badThoughts.Array.data[3]'
+      value: I am good at art
+      objectReference: {fileID: 0}
+    - target: {fileID: 9000020829136508416, guid: b72ca275497f0cd4d96790a357db7a05, type: 3}
+      propertyPath: 'badThoughts.Array.data[4]'
+      value: I am good at helping others
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2467,6 +2499,34 @@ PrefabInstance:
     - target: {fileID: 85050640755070973, guid: 466c012bfe7a85646bcf55b8afb5bf16, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 790077500125846032, guid: 466c012bfe7a85646bcf55b8afb5bf16, type: 3}
+      propertyPath: goodThoughtText
+      value: I should  try...
+      objectReference: {fileID: 0}
+    - target: {fileID: 790077500125846032, guid: 466c012bfe7a85646bcf55b8afb5bf16, type: 3}
+      propertyPath: 'badThoughts.Array.data[0]'
+      value: What if things go wrong?
+      objectReference: {fileID: 0}
+    - target: {fileID: 790077500125846032, guid: 466c012bfe7a85646bcf55b8afb5bf16, type: 3}
+      propertyPath: 'badThoughts.Array.data[1]'
+      value: Am I going to regret this?
+      objectReference: {fileID: 0}
+    - target: {fileID: 790077500125846032, guid: 466c012bfe7a85646bcf55b8afb5bf16, type: 3}
+      propertyPath: 'badThoughts.Array.data[2]'
+      value: What if I change my mind?
+      objectReference: {fileID: 0}
+    - target: {fileID: 790077500125846032, guid: 466c012bfe7a85646bcf55b8afb5bf16, type: 3}
+      propertyPath: 'badThoughts.Array.data[3]'
+      value: What if other people are righ?t
+      objectReference: {fileID: 0}
+    - target: {fileID: 790077500125846032, guid: 466c012bfe7a85646bcf55b8afb5bf16, type: 3}
+      propertyPath: 'badThoughts.Array.data[4]'
+      value: What would people say?
+      objectReference: {fileID: 0}
+    - target: {fileID: 790077500125846032, guid: 466c012bfe7a85646bcf55b8afb5bf16, type: 3}
+      propertyPath: 'badThoughts.Array.data[5]'
+      value: Is this really what I want?
       objectReference: {fileID: 0}
     - target: {fileID: 5198476925569076904, guid: 466c012bfe7a85646bcf55b8afb5bf16, type: 3}
       propertyPath: m_Name

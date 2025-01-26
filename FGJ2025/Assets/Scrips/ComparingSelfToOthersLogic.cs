@@ -4,6 +4,8 @@ public class ComparingSelfToOthersLogic : ScreenLogic
 {
     public string[] badComparisons;
 
+    public string[] badComparisonsSentence;
+
     private GoodThought winningThought;
 
     private Character character;
@@ -28,7 +30,7 @@ public class ComparingSelfToOthersLogic : ScreenLogic
     protected override void OnBadThoughtTriggered(BadThought badThought)
     {
         Debug.Log(badThought, badThought);
-        character.SaySomething($"{badComparisons[Random.Range(0, badComparisons.Length)]} would be better at this");
+        character.SaySomething($"{badComparisons[Random.Range(0, badComparisons.Length)]} {badComparisonsSentence[Random.Range(0, badComparisonsSentence.Length)]}");
     }
 
     protected override void OnGoodThoughtTriggered(GoodThought goodThought)
