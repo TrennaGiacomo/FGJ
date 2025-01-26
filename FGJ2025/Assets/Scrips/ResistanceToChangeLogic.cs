@@ -1,7 +1,10 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ResistanceToChangeLogic : ScreenLogic
 {
+    public UnityEvent OnChangeAccepted;
+
     private HealedCharacter healedCharacter;
 
     public void Start()
@@ -16,11 +19,14 @@ public class ResistanceToChangeLogic : ScreenLogic
 
     public override void PlayLogic()
     {
+        if (!choiceCreator)
+            choiceCreator = GetComponent<ChoiceCreator>();
+
         choiceCreator.CreateChoices();
     }
 
     protected override void OnGoodThoughtTriggered(GoodThought goodThought)
     {
-        //Do whatever
+        OnChangeAccepted.Invoke();
     }
 }

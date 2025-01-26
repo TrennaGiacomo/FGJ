@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
@@ -42,5 +43,10 @@ public class Game : MonoBehaviour
 
         _currentScreen.OnComplete.AddListener(OnFinishCurrentScreen.Invoke);
         _currentScreen.StartScreen();   
+    }
+
+    public void PlayEndSequence()
+    {
+        SceneManager.LoadScene("EndSequence");
     }
 }

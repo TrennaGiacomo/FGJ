@@ -35,11 +35,6 @@ public class MainMenuManager : MonoBehaviour
 
     public void CloseCredits()
     {
-        creditsBubble.SetActive(false);
-        foreach (GameObject go in draggables) 
-        { 
-            go.SetActive(true);
-            go.GetComponent<Floating>().ResetPos();
-        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

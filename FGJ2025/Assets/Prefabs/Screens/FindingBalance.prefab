@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1186784902369507367
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2628872147042558227}
+  - component: {fileID: 5097232437578473429}
+  - component: {fileID: 3638369739176018469}
+  - component: {fileID: 1694091004173689816}
+  m_Layer: 0
+  m_Name: FindingBalance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2628872147042558227
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186784902369507367}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5097232437578473429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186784902369507367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7f4074514a610e4c8c2e5913e45efe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 1, y: 1, z: 0}
+  _screenLogic: {fileID: 1694091004173689816}
+--- !u!114 &3638369739176018469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186784902369507367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3214ee3ab5183dd4e933a0d784e8ecc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnChoicesCreated:
+    m_PersistentCalls:
+      m_Calls: []
+  goodThoughtPrefab: {fileID: 1339513969306659671, guid: 21d10f3000af158469f8385665b66661, type: 3}
+  badThoughtPrefab: {fileID: 1339513969306659671, guid: 84a43f6e8805a674686b760feba63cb6, type: 3}
+  creationCenter: {fileID: 2628872147042558227}
+  goodThoughtText: I need to take care of myself
+  badThoughts:
+  - I have to be a good friend
+  - I must be there for my family
+  - My partner counts on me
+  - I have to get that promotion
+  - I need to get the highest grades
+--- !u!114 &1694091004173689816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186784902369507367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db131d952c412db40a37954ae43ad032, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  othersAttributes:
+  - being a good friend
+  - being there for my family
+  - my partner

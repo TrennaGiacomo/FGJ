@@ -21,9 +21,17 @@ public class ComparingSelfToOthersLogic : ScreenLogic
 
     public override void PlayLogic()
     {
+        if (!choiceCreator)
+            choiceCreator = GetComponent<ChoiceCreator>();
+            
         choiceCreator.CreateChoices();
 
         winningThought = FindAnyObjectByType<GoodThought>();
+    }
+
+    protected override void OnBadThoughtTriggered(BadThought badThought)
+    {
+        Debug.Log(badThought, badThought);
     }
 
     protected override void OnGoodThoughtTriggered(GoodThought goodThought)

@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6309485896223246189
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5557684704438479914}
+  - component: {fileID: 6653111162454618002}
+  - component: {fileID: 776428921654910131}
+  - component: {fileID: 7814406378824256657}
+  m_Layer: 0
+  m_Name: FeelingOverwhelmed
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5557684704438479914
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6309485896223246189}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6653111162454618002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6309485896223246189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7f4074514a610e4c8c2e5913e45efe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 1, y: 1, z: 0}
+  _screenLogic: {fileID: 7814406378824256657}
+--- !u!114 &776428921654910131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6309485896223246189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3214ee3ab5183dd4e933a0d784e8ecc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnChoicesCreated:
+    m_PersistentCalls:
+      m_Calls: []
+  goodThoughtPrefab: {fileID: 1339513969306659671, guid: 21d10f3000af158469f8385665b66661, type: 3}
+  badThoughtPrefab: {fileID: 1339513969306659671, guid: 84a43f6e8805a674686b760feba63cb6, type: 3}
+  creationCenter: {fileID: 5557684704438479914}
+  goodThoughtText: Take one thing at a time
+  badThoughts:
+  - I need to pay bills
+  - I have to clean my house
+  - I should exercise
+  - They expect me to be social
+  - I must reach my goals
+  - I need to be useful
+  - What am I doing?
+  - Is my life going anywhere?
+  - I need to catch up
+  - I'm getting left behind
+--- !u!114 &7814406378824256657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6309485896223246189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63c24236a1a7f66428b5e89aab8c0315, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -25,10 +25,11 @@ public class FindingBalanceLogic : ScreenLogic
             OnComplete.Invoke();
             CleanUp();
         }
-        else
-        {
-            FindFirstObjectByType<Character>()
+    }
+
+    protected override void OnBadThoughtTriggered(BadThought badThought)
+    {
+        FindFirstObjectByType<Character>()
                 .SaySomething($"But what about {othersAttributes[Random.Range(0, othersAttributes.Length)]}?");
-        }
     }
 }

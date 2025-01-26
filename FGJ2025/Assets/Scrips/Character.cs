@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -12,6 +13,8 @@ public class Character : MonoBehaviour
     private int _animIdIsWalking;
 
     [SerializeField] private GameObject _speechBubble;
+
+    private Coroutine speakingCoroutine;
 
     private void Start()
     {
@@ -28,13 +31,15 @@ public class Character : MonoBehaviour
         _animator.SetBool(_animIdIsWalking, false);
     }
 
-    public void SaySomething(string something)
+    public void SaySomething(string something, Action onFinish = null)
     {
-        StopCoroutine(SaySomethingCoroutine(""));
-        StartCoroutine(SaySomethingCoroutine(something));
+        if (speakingCoroutine != null)
+            StopCoroutine(speakingCoroutine);
+        
+        speakingCoroutine = StartCoroutine(SaySomethingCoroutine(something, onFinish));
     }
 
-    private IEnumerator SaySomethingCoroutine(string something)
+    private IEnumerator SaySomethingCoroutine(string something, Action onFinish = null)
     {
         _speechBubble.SetActive(true);
         var text = _speechBubble.GetComponentInChildren<TMP_Text>();
@@ -48,5 +53,10 @@ public class Character : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(3.0f);
         _speechBubble.SetActive(false);
+
+        if (onFinish != null)
+        {
+            onFinish.Invoke();
+        }
     }
 }

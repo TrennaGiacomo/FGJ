@@ -6,6 +6,8 @@ public class HealedCharacter : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
 
+    public SpriteRenderer spriteRenderer;
+
     private int _animIdIsWalking;
 
     private float startPosX;
@@ -14,6 +16,11 @@ public class HealedCharacter : MonoBehaviour
     {
         _animIdIsWalking = Animator.StringToHash("IsWalking");
         startPosX = transform.position.x;
+    }
+
+    public void Flip()
+    {
+        spriteRenderer.flipX = true;
     }
 
     public void StartWalking()
