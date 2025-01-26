@@ -17,14 +17,17 @@ public class Game : MonoBehaviour
     private ScreenRoot _currentScreen;
 
     private bool _gameInProgress;
-    
-    private void Update()
+
+    private void Start()
     {
-        if (!_gameInProgress && Input.GetKeyDown(KeyCode.Space))
-        {
-            StartGame();
-            _gameInProgress = true;
-        }
+        StartCoroutine(DelayedStart());
+    }
+
+    private IEnumerator DelayedStart()
+    {
+        yield return new WaitForSecondsRealtime(1.0f);
+        StartGame();
+        _gameInProgress = true;
     }
 
     public void StartGame()
@@ -42,7 +45,7 @@ public class Game : MonoBehaviour
         _currentScreen = screen;
 
         _currentScreen.OnComplete.AddListener(OnFinishCurrentScreen.Invoke);
-        _currentScreen.StartScreen();   
+        _currentScreen.StartScreen();
     }
 
     public void PlayEndSequence()
