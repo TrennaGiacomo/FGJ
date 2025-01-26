@@ -8,6 +8,12 @@ public class MainMenuManager : MonoBehaviour
 
     [SerializeField] private GameObject creditsBubble;
 
+    private void Start()
+    {
+        DontDestroyOnLoadMusic.musicSource.volume = 1;
+        DontDestroyOnLoadMusic.musicSource.Play();
+    }
+
     public void PrintSomething(GameObject thought)
     {
         Debug.Log("Thought: " + thought.name);

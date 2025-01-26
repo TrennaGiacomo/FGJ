@@ -19,10 +19,14 @@ public class FadeToBlack : MonoBehaviour
         fadeImage.color = Color.clear;
         while (a < 1)
         {
+            DontDestroyOnLoadMusic.musicSource.volume = 1f - a;
+            
             a += (1 / fadeDuration) * Time.deltaTime;
             fadeImage.color = new(0, 0, 0, a);
             yield return new WaitForEndOfFrame();
         }
+
+        DontDestroyOnLoadMusic.musicSource.Stop();
 
         yield return new WaitForSeconds(0.5f);
 
