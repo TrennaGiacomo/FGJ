@@ -28,6 +28,7 @@ public class ComparingSelfToOthersLogic : ScreenLogic
     protected override void OnBadThoughtTriggered(BadThought badThought)
     {
         Debug.Log(badThought, badThought);
+        character.SaySomething($"{badComparisons[Random.Range(0, badComparisons.Length)]} would be better at this");
     }
 
     protected override void OnGoodThoughtTriggered(GoodThought goodThought)
@@ -36,10 +37,6 @@ public class ComparingSelfToOthersLogic : ScreenLogic
         {
             OnComplete.Invoke();
             CleanUp();
-        }
-        else
-        {
-            character.SaySomething($"{Random.Range(0, badComparisons.Length)} would be better at this");
         }
     }
 }

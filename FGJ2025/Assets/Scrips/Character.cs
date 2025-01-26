@@ -16,6 +16,8 @@ public class Character : MonoBehaviour
 
     private Coroutine speakingCoroutine;
 
+    private bool isTalking = false;
+
     private void Start()
     {
         _animIdIsWalking = Animator.StringToHash("IsWalking");
@@ -34,8 +36,12 @@ public class Character : MonoBehaviour
     public void SaySomething(string something, Action onFinish = null)
     {
         if (speakingCoroutine != null)
+        {
+            isTalking = false;
             StopCoroutine(speakingCoroutine);
-        
+        }
+
+        isTalking = true;
         speakingCoroutine = StartCoroutine(SaySomethingCoroutine(something, onFinish));
     }
 
@@ -44,8 +50,14 @@ public class Character : MonoBehaviour
         _speechBubble.SetActive(true);
         var text = _speechBubble.GetComponentInChildren<TMP_Text>();
         string output = "";
-        while(output.Length < something.Length)
+        while (output.Length < something.Length)
         {
+            if (!isTalking)
+            {
+                _speechBubble.SetActive(false);
+                yield break;
+            }
+
             output += something[output.Length];
             text.text = output;
             yield return new WaitForSeconds(0.1f);
