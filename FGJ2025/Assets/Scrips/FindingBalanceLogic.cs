@@ -4,8 +4,6 @@ public class FindingBalanceLogic : ScreenLogic
 {
     public string[] othersAttributes;
 
-    public string selfAttribute;
-
     private GoodThought correctThought;
 
     public override void CleanUp()
@@ -17,14 +15,7 @@ public class FindingBalanceLogic : ScreenLogic
     {
         choiceCreator.CreateChoices();
 
-        //var numThoughts = othersAttributes.Length;
-
-        // (int i = 0; i < numThoughts; i++)
-        //{
-        //    choiceCreator.CreateBadThought(othersAttributes[i], i);
-        //}
-
-        correctThought = choiceCreator.CreateGoodThought(selfAttribute);
+        correctThought = FindAnyObjectByType<GoodThought>();
     }
 
     protected override void OnGoodThoughtTriggered(GoodThought goodThought)

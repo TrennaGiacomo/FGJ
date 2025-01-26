@@ -952,6 +952,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Evil Bro
       objectReference: {fileID: 0}
+    - target: {fileID: 1361999530240358460, guid: 8c8a167239c9333499bd60cf9690a196, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1361999530240358460, guid: 8c8a167239c9333499bd60cf9690a196, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1361999530240358460, guid: 8c8a167239c9333499bd60cf9690a196, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 5975001745810129651, guid: 8c8a167239c9333499bd60cf9690a196, type: 3}
@@ -1218,7 +1230,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.44}
+  m_Offset: {x: -0.19102502, y: 0.10922837}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1228,7 +1240,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 4.53, y: 5.3986597}
+  m_Size: {x: 2.3051195, y: 4.7371163}
   m_EdgeRadius: 0
 --- !u!114 &831788792
 MonoBehaviour:
@@ -1763,8 +1775,14 @@ MonoBehaviour:
   goodThoughtPrefab: {fileID: 1339513969306659671, guid: 21d10f3000af158469f8385665b66661, type: 3}
   badThoughtPrefab: {fileID: 1339513969306659671, guid: 84a43f6e8805a674686b760feba63cb6, type: 3}
   creationCenter: {fileID: 1382410129}
-  goodThoughtText: 
-  badThoughts: []
+  goodThoughtText: Correct
+  badThoughts:
+  - Wrong
+  - Wrong
+  - Wrong
+  - Wrong
+  - Wrong
+  - Wrong
 --- !u!114 &1382410132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2020,7 +2038,6 @@ MonoBehaviour:
   - being a good friend
   - being there for my family
   - my partner
-  selfAttribute: SelfAttribute
 --- !u!114 &1622307467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2180,13 +2197,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   badComparisons:
-  - Someone else is better than me
-  fakeGoodThoughts:
-  - FakeGoodThought
-  - FakeGoodThought
-  - FakeGoodThought
-  - FakeGoodThought
-  realGoodThought: RealGoodThought
+  - My friend
+  - My brother
+  - My sister
+  - Someone else
 --- !u!114 &1737330296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2205,9 +2219,13 @@ MonoBehaviour:
   goodThoughtPrefab: {fileID: 1339513969306659671, guid: 21d10f3000af158469f8385665b66661, type: 3}
   badThoughtPrefab: {fileID: 1339513969306659671, guid: 84a43f6e8805a674686b760feba63cb6, type: 3}
   creationCenter: {fileID: 1737330294}
-  goodThoughtText: I am enough
+  goodThoughtText: I am good enough
   badThoughts:
-  - 
+  - Wrong
+  - Wrong
+  - Wrong
+  - Wrong
+  - Wrong
 --- !u!114 &1737330297
 MonoBehaviour:
   m_ObjectHideFlags: 0

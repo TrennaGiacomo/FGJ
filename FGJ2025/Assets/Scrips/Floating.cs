@@ -7,9 +7,11 @@ public class Floating : MonoBehaviour
     float duration = 1.5f;
     DraggableBubble draggableBubble;
     Tween floatingTween;
+    Vector3 startingPos;
 
     private void Start()
     {
+        startingPos = transform.position;
         draggableBubble = GetComponent<DraggableBubble>();
         StartFloating();
     }
@@ -26,10 +28,15 @@ public class Floating : MonoBehaviour
             StartFloating();
     }
 
-    private void StartFloating()
+    public void StartFloating()
     {
         floatingTween = transform.DOMove(new Vector3(transform.position.x, transform.position.y + animationOffset, transform.position.z), duration)
             .SetEase(Ease.InOutSine)
             .SetLoops(-1, LoopType.Yoyo);
+    }
+
+    public void ResetPos()
+    {
+        transform.position = startingPos;
     }
 }

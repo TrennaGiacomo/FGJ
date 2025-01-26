@@ -6,6 +6,8 @@ public class MainMenuManager : MonoBehaviour
 {
     [SerializeField] private List<GameObject> draggables;
 
+    [SerializeField] private GameObject creditsBubble;
+
     public void PrintSomething(GameObject thought)
     {
         Debug.Log("Thought: " + thought.name);
@@ -21,11 +23,23 @@ public class MainMenuManager : MonoBehaviour
         else if (thought == draggables[1])
         {
             // Show the Credits
+            creditsBubble.SetActive(true);
+            foreach (GameObject go in draggables) { go.SetActive(false); }
         }
         else
         {
             // Quit the Game
             Application.Quit();
+        }
+    }
+
+    public void CloseCredits()
+    {
+        creditsBubble.SetActive(false);
+        foreach (GameObject go in draggables) 
+        { 
+            go.SetActive(true);
+            go.GetComponent<Floating>().ResetPos();
         }
     }
 }

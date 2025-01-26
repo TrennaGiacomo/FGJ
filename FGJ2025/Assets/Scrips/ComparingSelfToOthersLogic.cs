@@ -4,11 +4,15 @@ public class ComparingSelfToOthersLogic : ScreenLogic
 {
     public string[] badComparisons;
 
-    public string[] fakeGoodThoughts;
-
-    public string realGoodThought;
-
     private GoodThought winningThought;
+
+    private Character character;
+
+    public void Start()
+    {
+        character = FindFirstObjectByType<Character>();
+        Debug.Log(character);
+    }
 
     public override void CleanUp()
     {
@@ -17,14 +21,9 @@ public class ComparingSelfToOthersLogic : ScreenLogic
 
     public override void PlayLogic()
     {
-        var numThoughts = fakeGoodThoughts.Length;
+        choiceCreator.CreateChoices();
 
-        for (int i = 0; i < numThoughts; i++)
-        {
-            choiceCreator.CreateGoodThought(fakeGoodThoughts[i]);
-        }
-
-        winningThought = choiceCreator.CreateGoodThought(realGoodThought);
+        winningThought = FindAnyObjectByType<GoodThought>();
     }
 
     protected override void OnGoodThoughtTriggered(GoodThought goodThought)
@@ -32,11 +31,11 @@ public class ComparingSelfToOthersLogic : ScreenLogic
         if (goodThought == winningThought)
         {
             OnComplete.Invoke();
+            CleanUp();
         }
         else
         {
-            var randComparison = badComparisons[Random.Range(0, badComparisons.Length)];
-            FindFirstObjectByType<Character>().SaySomething(randComparison);
+            character.SaySomething($"{Random.Range(0, badComparisons.Length)} would be better at this");
         }
     }
 }
