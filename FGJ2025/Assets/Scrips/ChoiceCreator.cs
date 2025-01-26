@@ -28,15 +28,20 @@ public class ChoiceCreator : MonoBehaviour
         }
 
         randomPosition = GetRandomPosition();
-        thoughts.Add(CreateGoodThought(goodThoughtText).gameObject);
+        thoughts.Add(CreateGoodThought(goodThoughtText, i).gameObject);
 
         OnChoicesCreated.Invoke();
+
+        FindFirstObjectByType<BoundsCheck>().Refresh();
     }
 
-    public GoodThought CreateGoodThought(string text)
+    public GoodThought CreateGoodThought(string text, int numberSpawned)
     {
         var randomPosition = GetRandomPosition();
         var goodThought = Instantiate(goodThoughtPrefab, randomPosition, creationCenter.rotation);
+
+        goodThought.GetComponentInChildren<SpriteRenderer>().sortingOrder = numberSpawned;
+        goodThought.GetComponentInChildren<Canvas>().sortingOrder = numberSpawned;
 
         var component = goodThought.GetComponent<GoodThought>();
         component.SetText(goodThoughtText);

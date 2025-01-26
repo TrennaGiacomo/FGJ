@@ -5,13 +5,6 @@ public class ResistanceToChangeLogic : ScreenLogic
 {
     public UnityEvent OnChangeAccepted;
 
-    private HealedCharacter healedCharacter;
-
-    public void Start()
-    {
-        healedCharacter = FindFirstObjectByType<HealedCharacter>();
-    }
-
     public override void CleanUp()
     {
         choiceCreator.ClearChoices();

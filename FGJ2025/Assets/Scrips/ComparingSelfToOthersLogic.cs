@@ -8,12 +8,6 @@ public class ComparingSelfToOthersLogic : ScreenLogic
 
     private Character character;
 
-    public void Start()
-    {
-        character = FindFirstObjectByType<Character>();
-        Debug.Log(character);
-    }
-
     public override void CleanUp()
     {
         choiceCreator.ClearChoices();
@@ -23,6 +17,8 @@ public class ComparingSelfToOthersLogic : ScreenLogic
     {
         if (!choiceCreator)
             choiceCreator = GetComponent<ChoiceCreator>();
+
+        character = FindFirstObjectByType<Character>();
             
         choiceCreator.CreateChoices();
 

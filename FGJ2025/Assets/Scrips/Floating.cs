@@ -25,7 +25,7 @@ public class Floating : MonoBehaviour
         }
         else
             if (floatingTween == null || !floatingTween.IsPlaying())
-            StartFloating();
+                StartFloating();
     }
 
     public void StartFloating()
